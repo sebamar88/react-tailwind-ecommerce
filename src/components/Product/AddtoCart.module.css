@@ -1,0 +1,39 @@
+.addContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem 0;
+}
+
+.minus,
+.plus,
+.counter {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.minus,
+.plus {
+  background-color: #4f46e5;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.counter {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.addToCart {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: #4f46e5;
+  color: white;
+}
