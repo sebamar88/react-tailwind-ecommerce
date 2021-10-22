@@ -14,12 +14,11 @@ const ItemListContainer = ({ title, setCart, cart }) => {
       setTimeout(() => {
         setLoad(false)
         setProducts(resultado.data);
-      }, 1500)
+      }, 2000)
 
     };
     API();
-  }, []);
-
+  }, []); 
 
   return (
     <div className="bg-white">
