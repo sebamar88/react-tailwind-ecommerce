@@ -8,16 +8,19 @@ const ItemListContainer = ({ title, setCart, cart }) => {
   const [load, setLoad] = useState(false);
   useEffect(() => {
     const API = async () => {
-      const url = "https://api-furnistar.prestoapi.com/api/products";
-      const resultado = await axios.get(url);
+      const urlMen = "https://fakestoreapi.com/products/category/men's%20clothing";
+      const urlWomen = "https://fakestoreapi.com/products/category/women's%20clothing?limit=4";
+      const men = await axios.get(urlMen);
+      const women = await axios.get(urlWomen);
+      const result = [...men.data, ...women.data ];
       setLoad(true)
       setTimeout(() => {
         setLoad(false)
-        setProducts(resultado.data);
-      }, 2000)
+        setProducts(result);
+      }, 2000) 
 
     };
-    API();
+    API(); 
   }, []); 
 
   return (

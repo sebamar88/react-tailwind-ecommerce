@@ -1,14 +1,13 @@
 import AddtoCart from "./AddtoCart";
 
 const Product = ({ item, setCart, cart }) => {
-  const { fields, id } = item;
-  const { name, image, company, price } = fields;
+  const { title, image, category, price, id } = item;
   return (
-    <div key={id} className="group relative">
+    <div key={id} className="group relative flex flex-col justify-between">
       <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
         <img
-          src={image[0].thumbnails.large.url}
-          alt={name}
+          src={image}
+          alt={title}
           className="w-full h-full object-center object-cover lg:w-full lg:h-full"
         />
       </div>
@@ -17,10 +16,10 @@ const Product = ({ item, setCart, cart }) => {
           <h3 className="text-sm text-gray-700">
             <a href="!#">
               <span aria-hidden="true" className="inset-0" />
-              {name}
+              {title}
             </a>
           </h3>
-          <p className="mt-1 text-sm text-gray-500">{company}</p>
+          <p className="mt-1 text-sm text-gray-500 capitalize font-bold">{category}</p>
         </div>
         <p className="text-sm font-medium text-gray-900">${price}</p>
       </div>

@@ -4,7 +4,7 @@ import * as styles from "./AddtoCart.module.css";
 const AddtoCart = ({ stock, setCart, cart }) => {
   const [counter, setCounter] = useState(0);
 
-  const handleCounter = (e) => {
+/*   const handleCounter = (e) => {
     if(e.target.value === '-'){
       if (counter > 0) {
         setCounter(counter - 1);
@@ -14,7 +14,7 @@ const AddtoCart = ({ stock, setCart, cart }) => {
         setCounter(counter + 1);
       }
     }
-  }
+  } */
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -26,14 +26,14 @@ const AddtoCart = ({ stock, setCart, cart }) => {
   };
 
   return (
-    <>
+    <div>
       <div className={styles.addContainer}>
         <input
           type="button"
           value="-"
           className={styles.minus}
           onClick={(e) => {
-            handleCounter(e);
+            counter > 0 && setCounter(counter + Number(`${e.target.value}1`));
           }}
         />
         <span className={styles.counter}>{counter}</span>
@@ -42,7 +42,7 @@ const AddtoCart = ({ stock, setCart, cart }) => {
           value="+"
           className={styles.plus}
           onClick={(e) => {
-            handleCounter(e);
+            counter < stock && setCounter(counter + Number(`${e.target.value}1`));
           }}
         />
       </div>
@@ -54,7 +54,7 @@ const AddtoCart = ({ stock, setCart, cart }) => {
       >
         Add to Cart
       </button>
-    </>
+    </div>
   );
 };
 
