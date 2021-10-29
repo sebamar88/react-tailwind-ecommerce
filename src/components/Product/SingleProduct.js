@@ -8,7 +8,7 @@ const SingleProduct = () => {
   const { id } = useParams();
   useEffect(() => {
     const API = async () => {
-      const url = `https://fakestoreapi.com/products/${id}`;
+      const url = `https://617b5fb2d842cf001711be7c.mockapi.io/api/v1/products/${id}`;
       const productData = await axios.get(url);
       const result = productData.data;
       setProduct(result);
