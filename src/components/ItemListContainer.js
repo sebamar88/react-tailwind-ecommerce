@@ -7,44 +7,26 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [load, setLoad] = useState(true);
-  const { id } = useParams();
+  let params = useParams();
+  const id = params.id !== undefined ? params.id : "";
   let title;
   if (id !== undefined) {
-    title = `${id.toUpperCase()} CLOTH`;
+    title = `${id.toUpperCase()}`;
   } else {
     title = "ALL PRODUCTS";
   }
   useEffect(() => {
     const API = async () => {
-      let women;
-      let men;
-      let result;
-      const urlMen =
-        "https://fakestoreapi.com/products/category/men's%20clothing";
-      const urlWomen =
-        "https://fakestoreapi.com/products/category/women's%20clothing?limit=4";
-      switch (id) {
-        case "women":
-          women = await axios.get(urlWomen);
-          result = women.data;
-          break;
-        case "men":
-          men = await axios.get(urlMen);
-          result = men.data;
-          break;
-        default:
-          women = await axios.get(urlWomen);
-          men = await axios.get(urlMen);
-          result = [...men.data, ...women.data];
-          break;
-      }
+      const url = `https://617b5fb2d842cf001711be7c.mockapi.io/api/v1/products?category=${id}`;
+      const productData = await axios.get(url);
+      const result = productData.data;
       setTimeout(() => {
         setLoad(false);
         setProducts(result);
       }, 2000);
     };
     API();
-  }, [id]);
+  }, [params]);
 
   return (
     <div className="bg-white">

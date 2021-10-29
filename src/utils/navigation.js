@@ -125,6 +125,8 @@ const navigation = {
   pages: [
     { name: "Women Cloths", href: "/category/women" },
     { name: "Man Cloths", href: "/category/men" },
+    { name: "Electronics", href: "/category/electronics" },
+    { name: "Jewelery", href: "/category/jewelery" },
   ],
 };
 
