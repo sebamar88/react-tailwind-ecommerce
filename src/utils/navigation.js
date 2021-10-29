@@ -123,8 +123,8 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
+    { name: "Women Cloths", href: "/category/women" },
+    { name: "Man Cloths", href: "/category/men" },
   ],
 };
 

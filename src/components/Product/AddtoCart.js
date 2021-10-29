@@ -1,27 +1,16 @@
 import { useState } from "react";
 import * as styles from "./AddtoCart.module.css";
 
-const AddtoCart = ({ stock, setCart, cart }) => {
+const AddtoCart = ({ stock, product }) => {
   const [counter, setCounter] = useState(0);
 
-/*   const handleCounter = (e) => {
-    if(e.target.value === '-'){
-      if (counter > 0) {
-        setCounter(counter - 1);
-      }
-    }else{
-      if (counter < stock) {
-        setCounter(counter + 1);
-      }
-    }
-  } */
-
-  const handleAdd = (e) => {
+  const onAdd = (e) => {
     e.preventDefault();
     if (counter !== 0) {
-      const newCartCounter = cart + counter;
-      setCart(newCartCounter);
       setCounter(0);
+      console.log("====================================");
+      console.log(`You add ${counter} "${product}" to your cart.`);
+      console.log("====================================");
     }
   };
 
@@ -42,13 +31,14 @@ const AddtoCart = ({ stock, setCart, cart }) => {
           value="+"
           className={styles.plus}
           onClick={(e) => {
-            counter < stock && setCounter(counter + Number(`${e.target.value}1`));
+            counter < stock &&
+              setCounter(counter + Number(`${e.target.value}1`));
           }}
         />
       </div>
       <button
         onClick={(e) => {
-          handleAdd(e);
+          onAdd(e);
         }}
         className={styles.addToCart}
       >

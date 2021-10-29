@@ -1,15 +1,17 @@
-import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Layout from "./components/UI/Layout";
 import ItemListContainer from "./components/ItemListContainer";
-import { useState } from "react";
+import SingleProduct from "./components/Product/SingleProduct";
 
 function App() {
-  const [cart, setCart] = useState(0);
-
   return (
-    <Layout cart={cart}>
-      <ItemListContainer cart={cart} setCart={setCart} title="Products" />
-    </Layout>
+    <Router>
+      <Layout>
+        <Route path="/" component={ItemListContainer} exact />
+        <Route path="/category/:id" component={ItemListContainer} />
+        <Route path="/product/:id" component={SingleProduct} />
+      </Layout>
+    </Router>
   );
 }
 
