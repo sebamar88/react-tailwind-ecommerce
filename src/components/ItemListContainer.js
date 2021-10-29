@@ -11,7 +11,7 @@ const ItemListContainer = () => {
   const id = params.id !== undefined ? params.id : "";
   let title;
   if (id !== undefined) {
-    title = `${id.toUpperCase()}`;
+    title = `${id.toUpperCase().replace("-", " ")}`;
   } else {
     title = "ALL PRODUCTS";
   }
