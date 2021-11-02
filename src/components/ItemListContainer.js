@@ -8,9 +8,13 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [load, setLoad] = useState(true);
   let params = useParams();
-  const id = params.id !== undefined ? `^${params.id}$` : "";
-  const title =
-    params.id !== undefined ? `${params.id.toUpperCase()}` : "ALL PRODUCTS";
+  const id = params.id !== undefined ? params.id : "";
+  let title;
+  if (id !== undefined) {
+    title = `${id.toUpperCase().replace("-", " ")}`;
+  } else {
+    title = "ALL PRODUCTS";
+  }
 
   useEffect(() => {
     const API = async () => {
