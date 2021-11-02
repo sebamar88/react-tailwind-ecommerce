@@ -8,13 +8,10 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [load, setLoad] = useState(true);
   let params = useParams();
-  const id = params.id !== undefined ? params.id : "";
-  let title;
-  if (id !== undefined) {
-    title = `${id.toUpperCase().replace("-", " ")}`;
-  } else {
-    title = "ALL PRODUCTS";
-  }
+  const id = params.id !== undefined ? `^${params.id}$` : "";
+  const title =
+    params.id !== undefined ? `${params.id.toUpperCase()}` : "ALL PRODUCTS";
+
   useEffect(() => {
     const API = async () => {
       const url = `https://617b5fb2d842cf001711be7c.mockapi.io/api/v1/products?category=${id}`;
@@ -26,7 +23,7 @@ const ItemListContainer = () => {
       }, 2000);
     };
     API();
-  }, [params]);
+  }, [id]);
 
   return (
     <div className="bg-white">
