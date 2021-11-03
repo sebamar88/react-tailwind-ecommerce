@@ -116,7 +116,7 @@ export default function NavBar({ cart }) {
               <div className="ml-auto flex items-center">
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <Link to="/" className="group -m-2 p-2 flex items-center">
+                  <Link to="/cart" className="group -m-2 p-2 flex items-center">
                     <ShoppingBagIcon
                       className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"

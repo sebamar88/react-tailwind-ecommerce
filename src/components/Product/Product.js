@@ -1,14 +1,23 @@
 import AddtoCart from "./AddtoCart";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Product = ({ item }) => {
   const { title, image, category, price, id } = item;
+  const [addedToCart, setAddedToCart] = useState(false);
 
   const ondAdd = (counter) => {
     console.log("====================================");
     console.log(`You add ${counter} "${title}" to your cart.`);
     console.log("====================================");
+    if (counter > 0) {
+      setAddedToCart(true);
+    } else {
+      setAddedToCart(false);
+    }
   };
+
+  console.log(addedToCart);
 
   return (
     <div key={id} className="group relative flex flex-col justify-between">
@@ -33,7 +42,16 @@ const Product = ({ item }) => {
           <p className="text-sm font-medium text-gray-900">${price}</p>
         </div>
       </Link>
-      <AddtoCart onAdd={ondAdd} stock={8} product={title} />
+      {!addedToCart ? (
+        <AddtoCart onAdd={ondAdd} stock={8} product={title} />
+      ) : (
+        <Link
+          to="/cart"
+          className="bg-green-500 hover:bg-green-700 text-white text-center font-bold py-3 px-4 rounded"
+        >
+          Go to Cart
+        </Link>
+      )}
     </div>
   );
 };
