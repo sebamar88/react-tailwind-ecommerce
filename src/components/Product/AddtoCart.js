@@ -1,16 +1,14 @@
 import { useState } from "react";
 import * as styles from "./AddtoCart.module.css";
 
-const AddtoCart = ({ stock, product }) => {
+const AddtoCart = ({ stock, onAdd }) => {
   const [counter, setCounter] = useState(0);
 
-  const onAdd = (e) => {
+  const handleAdd = (e) => {
     e.preventDefault();
     if (counter !== 0) {
+      onAdd(counter);
       setCounter(0);
-      console.log("====================================");
-      console.log(`You add ${counter} "${product}" to your cart.`);
-      console.log("====================================");
     }
   };
 
@@ -38,7 +36,7 @@ const AddtoCart = ({ stock, product }) => {
       </div>
       <button
         onClick={(e) => {
-          onAdd(e);
+          handleAdd(e);
         }}
         className={styles.addToCart}
       >

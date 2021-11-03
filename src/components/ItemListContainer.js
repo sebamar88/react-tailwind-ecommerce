@@ -16,6 +16,9 @@ const ItemListContainer = () => {
     title = "ALL PRODUCTS";
   }
 
+ 
+
+
   useEffect(() => {
     const API = async () => {
       const url = `https://617b5fb2d842cf001711be7c.mockapi.io/api/v1/products?category=${id}`;

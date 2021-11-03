@@ -1,8 +1,15 @@
 import AddtoCart from "./AddtoCart";
 import { Link } from "react-router-dom";
 
-const Product = ({ item, setCart, cart }) => {
+const Product = ({ item }) => {
   const { title, image, category, price, id } = item;
+
+  const ondAdd = (counter) => {
+    console.log("====================================");
+    console.log(`You add ${counter} "${title}" to your cart.`);
+    console.log("====================================");
+  };
+
   return (
     <div key={id} className="group relative flex flex-col justify-between">
       <Link to={`/product/${id}`}>
@@ -26,7 +33,7 @@ const Product = ({ item, setCart, cart }) => {
           <p className="text-sm font-medium text-gray-900">${price}</p>
         </div>
       </Link>
-      <AddtoCart stock={8} product={title} />
+      <AddtoCart onAdd={ondAdd} stock={8} product={title} />
     </div>
   );
 };
