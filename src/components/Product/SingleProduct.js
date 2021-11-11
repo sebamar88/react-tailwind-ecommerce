@@ -2,9 +2,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import AddtoCart from "./AddtoCart";
+import { useCartContext } from "../../context/cartContext";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState({});
+
+  const { addToCart } = useCartContext();
+  const onAdd = (contador) => {
+    addToCart({
+      quantity: contador,
+      product: product,
+    });
+  };
   const { id } = useParams();
   useEffect(() => {
     const API = async () => {
@@ -35,7 +44,7 @@ const SingleProduct = () => {
         </span>
         <p className="text-xl my-8">{product.description}</p>
         <p className="text-xl mb-8">${product.price}</p>
-        <AddtoCart stock={8} product={product.title} />
+        <AddtoCart stock={8} onAdd={onAdd} />
       </div>
     </div>
   );

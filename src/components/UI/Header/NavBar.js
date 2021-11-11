@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import { Dialog, Popover, Transition } from "@headlessui/react";
 import { MenuIcon, ShoppingBagIcon, XIcon } from "@heroicons/react/outline";
 import navigation from "../../../utils/navigation";
+import { useCartContext } from "../../../context/cartContext";
 
 export default function NavBar({ cart }) {
   const [open, setOpen] = useState(false);
+
+  const { iconCart, cartList } = useCartContext();
 
   return (
     <div className="bg-white">
@@ -102,13 +105,13 @@ export default function NavBar({ cart }) {
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
                 <div className="h-full flex space-x-8">
                   {navigation.pages.map((page) => (
-                    <a
+                    <Link
                       key={page.name}
-                      href={page.href}
+                      to={page.href}
                       className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                     >
                       {page.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </Popover.Group>
@@ -122,7 +125,7 @@ export default function NavBar({ cart }) {
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      {cart}
+                      {cartList.length === 0 ? 0 : iconCart()}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>

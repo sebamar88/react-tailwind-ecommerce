@@ -1,23 +1,24 @@
 import AddtoCart from "./AddtoCart";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useCartContext } from "../../context/cartContext";
 
 const Product = ({ item }) => {
   const { title, image, category, price, id } = item;
   const [addedToCart, setAddedToCart] = useState(false);
 
-  const ondAdd = (counter) => {
-    console.log("====================================");
-    console.log(`You add ${counter} "${title}" to your cart.`);
-    console.log("====================================");
-    if (counter > 0) {
+  const { addToCart } = useCartContext();
+  const onAdd = (contador) => {
+    if (contador > 0) {
       setAddedToCart(true);
+      addToCart({
+        quantity: contador,
+        product: item,
+      });
     } else {
       setAddedToCart(false);
     }
   };
-
-  console.log(addedToCart);
 
   return (
     <div key={id} className="group relative flex flex-col justify-between">
@@ -43,7 +44,7 @@ const Product = ({ item }) => {
         </div>
       </Link>
       {!addedToCart ? (
-        <AddtoCart onAdd={ondAdd} stock={8} product={title} />
+        <AddtoCart onAdd={onAdd} stock={8} product={item} />
       ) : (
         <Link
           to="/cart"
