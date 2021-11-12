@@ -1,8 +1,8 @@
 import Product from "./Product/Product";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Spinner from "./UI/Spinner";
 import { useParams } from "react-router-dom";
+import { getFirestore } from "../services/getFirebase";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -16,21 +16,28 @@ const ItemListContainer = () => {
     title = "ALL PRODUCTS";
   }
 
- 
-
-
   useEffect(() => {
-    const API = async () => {
-      const url = `https://617b5fb2d842cf001711be7c.mockapi.io/api/v1/products?category=${id}`;
-      const productData = await axios.get(url);
-      const result = productData.data;
-      setTimeout(() => {
-        setLoad(false);
-        setProducts(result);
-      }, 2000);
-    };
-    API();
-  }, [id]);
+    const dbQuery = getFirestore();
+
+    const filterQuery = id
+        ? dbQuery.collection("products").where("category", "==", id)
+        : dbQuery.collection("products");
+
+    filterQuery
+        .get()
+        .then((res) => {
+            setProducts(
+                res.docs.map((product) => ({
+                    id: product.id,
+                    ...product.data(),
+                }))
+            );
+        })
+        .catch((err) => console.error(err))
+        .finally(() => setLoad(false));
+}, [id]);
+
+
 
   return (
     <div className="bg-white">
