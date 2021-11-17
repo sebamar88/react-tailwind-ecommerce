@@ -6,6 +6,8 @@ export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
+  const [orderReady, setOrderReady] = useState(false);
+  const [orderId, setOrderId] = useState(null);
 
   const addToCart = (objProduct) => {
     let carritoprevio = [...cartList];
@@ -21,6 +23,7 @@ export const CartContextProvider = ({ children }) => {
       setCartList([...cartList, objProduct]);
     }
   };
+
   const clearList = () => setCartList([]);
 
   const totalPrice = () => {
@@ -46,11 +49,16 @@ export const CartContextProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         cartList: cartList,
+        setCartList,
         addToCart,
         clearList,
         totalPrice,
         removeProduct,
         iconCart,
+        setOrderReady,
+        orderReady,
+        setOrderId,
+        orderId,
       }}
     >
       {children}

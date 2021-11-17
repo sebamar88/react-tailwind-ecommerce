@@ -3,6 +3,7 @@ import Layout from "./components/UI/Layout";
 import ItemListContainer from "./components/ItemListContainer";
 import SingleProduct from "./components/Product/SingleProduct";
 import Cart from "./components/Checkout/Cart";
+import Order from "./components/Order/Order";
 import { CartContextProvider } from "./context/cartContext";
 import { createContext } from "react";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/category/:id" component={ItemListContainer} />
           <Route path="/product/:id" component={SingleProduct} />
           <Route path="/cart" component={Cart} />
+          <Route path="/order/:orderId" component={Order} />
         </Layout>
       </Router>
     </CartContextProvider>

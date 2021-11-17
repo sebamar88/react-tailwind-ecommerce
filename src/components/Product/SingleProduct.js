@@ -16,12 +16,13 @@ const SingleProduct = () => {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const { addToCart } = useCartContext();
+  const { addToCart, setOrderReady } = useCartContext();
   const onAdd = (contador) => {
     addToCart({
       quantity: contador,
       product: product,
     });
+    setOrderReady(false);
   };
   const { id } = useParams();
 

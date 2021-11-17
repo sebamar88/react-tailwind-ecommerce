@@ -1,12 +1,28 @@
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/cartContext";
 import PriceTotal from "./PriceTotal";
+import FormCount from "../FormCount/FormCount";
 
 const Cart = () => {
-  const { cartList, removeProduct } = useCartContext();
+  const { cartList, removeProduct, orderReady, orderId } = useCartContext();
   return (
     <div className="container py-10">
-      {cartList.length === 0 ? (
+      {orderReady ? (
+        <div className="flex items-center flex-col justify-center text-center h-96">
+          <h2 className="text-3xl text-gray-700 font-extrabold mb-8">
+            Thank you for your order! <br />
+            Your Order # is: {orderId}
+          </h2>
+          <Link to={`/order/${orderId}`}>
+            <button
+              type="button"
+              className="bg-indigo-500 hover:bg-indigo-700 text-white text-center font-bold py-3 px-4 rounded"
+            >
+              Watch your order
+            </button>
+          </Link>
+        </div>
+      ) : cartList.length === 0 ? (
         <div className="flex items-center flex-col justify-center text-center h-96">
           <h2 className="text-3xl text-gray-700 font-extrabold mb-8">
             Empty Basket
@@ -14,7 +30,7 @@ const Cart = () => {
           <Link to={"/"}>
             <button
               type="button"
-              className="bg-red-500 hover:bg-red-700 text-white text-center font-bold py-3 px-4 rounded"
+              className="bg-indigo-500 hover:bg-indigo-700 text-white text-center font-bold py-3 px-4 rounded"
             >
               Continue Shopping
             </button>
@@ -67,6 +83,8 @@ const Cart = () => {
           <PriceTotal />
         </>
       )}
+
+      {cartList.length > 0 ? <FormCount /> : null}
     </div>
   );
 };

@@ -7,7 +7,7 @@ const Product = ({ item }) => {
   const { title, image, category, price, id } = item;
   const [addedToCart, setAddedToCart] = useState(false);
 
-  const { addToCart } = useCartContext();
+  const { addToCart, setOrderReady } = useCartContext();
   const onAdd = (contador) => {
     if (contador > 0) {
       setAddedToCart(true);
@@ -15,6 +15,7 @@ const Product = ({ item }) => {
         quantity: contador,
         product: item,
       });
+      setOrderReady(false);
     } else {
       setAddedToCart(false);
     }
