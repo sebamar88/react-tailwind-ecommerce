@@ -92,11 +92,11 @@ export default function NavBar({ cart }) {
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
                 <Link to={"/"}>
-                  <span className="sr-only">Workflow</span>
+                  <span className="sr-only">Furnistar</span>
                   <img
                     className="w-40 h-auto"
-                    src="https://d33wubrfki0l68.cloudfront.net/3a51f0921ebf1f86eb1315a27ac3e830b23ec6e9/a73fa/images/logo-black.svg"
-                    alt=""
+                    src="https://furnistar-coder.vercel.app/images/logo-black.svg"
+                    alt="Logo"
                   />
                 </Link>
               </div>

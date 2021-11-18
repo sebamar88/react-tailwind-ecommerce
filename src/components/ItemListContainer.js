@@ -10,7 +10,7 @@ const ItemListContainer = () => {
   let params = useParams();
   const id = params.id !== undefined ? params.id : "";
   let title;
-  if (id !== undefined) {
+  if (id !== "") {
     title = `${id.toUpperCase().replace("-", " ")}`;
   } else {
     title = "ALL PRODUCTS";
@@ -20,24 +20,22 @@ const ItemListContainer = () => {
     const dbQuery = getFirestore();
 
     const filterQuery = id
-        ? dbQuery.collection("products").where("category", "==", id)
-        : dbQuery.collection("products");
+      ? dbQuery.collection("products").where("category", "==", id)
+      : dbQuery.collection("products");
 
     filterQuery
-        .get()
-        .then((res) => {
-            setProducts(
-                res.docs.map((product) => ({
-                    id: product.id,
-                    ...product.data(),
-                }))
-            );
-        })
-        .catch((err) => console.error(err))
-        .finally(() => setLoad(false));
-}, [id]);
-
-
+      .get()
+      .then((res) => {
+        setProducts(
+          res.docs.map((product) => ({
+            id: product.id,
+            ...product.data(),
+          }))
+        );
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setLoad(false));
+  }, [id]);
 
   return (
     <div className="bg-white">

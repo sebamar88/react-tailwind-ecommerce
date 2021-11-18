@@ -60,7 +60,7 @@ const FormCount = () => {
       );
   };
   return (
-    <div className="mt-10 sm:mt-0">
+    <div className="mt-10 sm:mt-8 border-solid border-2 border-indigo-100 p-8">
       <div className="md:grid md:grid-cols-3 md:gap-6">
         <div className="md:col-span-1">
           <div className="px-4 sm:px-0">

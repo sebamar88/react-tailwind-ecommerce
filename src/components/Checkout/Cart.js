@@ -38,7 +38,7 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div className="mt-6 grid grid-cols-1 gap-y-10 px-4 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {cartList.map((item, index) => {
               return (
                 <>
@@ -80,11 +80,15 @@ const Cart = () => {
               );
             })}
           </div>
-          <PriceTotal />
         </>
       )}
 
-      {cartList.length > 0 ? <FormCount /> : null}
+      {cartList.length > 0 ? (
+        <>
+          <FormCount />
+          <PriceTotal />
+        </>
+      ) : null}
     </div>
   );
 };

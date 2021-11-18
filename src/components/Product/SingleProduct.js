@@ -42,7 +42,7 @@ const SingleProduct = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="grid grid-cols-2 py-28 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 py-28 place-items-center">
           <div>
             <img className="max-w-xs" src={product.image} alt={product.title} />
           </div>
