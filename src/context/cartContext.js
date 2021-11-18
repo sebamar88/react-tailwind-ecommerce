@@ -30,7 +30,6 @@ export const CartContextProvider = ({ children }) => {
     let total = 0;
 
     cartList.forEach((newProduct) => {
-      console.log(newProduct);
       total +=
         parseInt(newProduct.product.price) * parseInt(newProduct.quantity);
     });
