@@ -26,7 +26,7 @@ Released under [MIT](/LICENSE) by [@sebamar88](https://github.com/sebamar88).
 ### Version 1 :
 
 - The data is stored on Firestore
-- It is hosted [HERE!](react-tailwind-ecommerce.netlify.app/)
+- It is hosted [HERE!](https://react-tailwind-ecommerce.netlify.app/)
 
 An E commerce platform made using React JS, Context, Firebase , Firestore & Tailwind
 
