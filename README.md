@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# React-Tailwind-Ecommerce CoderHouse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Social buttons_
 
-## Available Scripts
+[![sebamar88 - react-tailwind-ecommerce](https://img.shields.io/static/v1?label=sebamar88&message=react-tailwind-ecommerce&color=blue&logo=github)](https://github.com/sebamar88/react-tailwind-ecommerce "Go to GitHub repo")
+[![stars - react-tailwind-ecommerce](https://img.shields.io/github/stars/sebamar88/react-tailwind-ecommerce?style=social)](https://github.com/sebamar88/react-tailwind-ecommerce)
+[![forks - react-tailwind-ecommerce](https://img.shields.io/github/forks/sebamar88/react-tailwind-ecommerce?style=social)](https://github.com/sebamar88/react-tailwind-ecommerce)
 
-In the project directory, you can run:
+_Repo metadata_
 
-### `yarn start`
+[![GitHub tag](https://img.shields.io/github/tag/sebamar88/react-tailwind-ecommerce?include_prereleases=&sort=semver&color=blue)](https://github.com/sebamar88/react-tailwind-ecommerce/releases/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_Call-to-Action buttons_
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<div align="center">
 
-### `yarn test`
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## License
 
-### `yarn build`
+Released under [MIT](/LICENSE) by [@sebamar88](https://github.com/sebamar88).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Version 1 :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The data is stored on Firestore
+- It is hosted [HERE!](react-tailwind-ecommerce.netlify.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8921ab13-bd37-4b13-919b-559f6a9efad2/deploy-status)](https://app.netlify.com/sites/react-tailwind-ecommerce/deploys)
 
-### `yarn eject`
+An E commerce platform made using React JS, Context, Firebase , Firestore & Tailwind
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The application is composed of the following Features:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Front-End
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- A landing page with animated minimalistic design, with the major categories of items.
+- A quick peek page where 5 products of each categories are on display.
+- A page with Sign-in and Sign-out components.
+- All form related fields are made using reusable components.
+- Has a cart feature which opens up and displays the items selected in a summary, also has a checkout button.
+- The cart component also allows to edit the contents of the items selected.
+- Check out features are yet to be integrated into the appplication.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Firebase
 
-## Learn More
+- At the moment firebase is used to call the products in the store.
+- It is also used to store order data
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**SCREENSHOTS:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Landing Page:
 
-### Code Splitting
+## ![](src/images/landing.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Product Details:
 
-### Analyzing the Bundle Size
+## ![](src/images/productDetails.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Cart Section:
 
-### Making a Progressive Web App
+![](src/images/cart.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Order Details:
 
-### Advanced Configuration
+## ![](src/images/orderDetails.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Developed With
 
-### Deployment
+- [Visual Studio Code](https://code.visualstudio.com/) - A source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring
+- [React](https://reactjs.org/) - A javascript library for building user interfaces
+- [Create react app](https://create-react-app.dev/) - A quick method to start developing a react application.
+- [Babel](https://babeljs.io/) - A transpiler for javascript
+- [Webpack](https://webpack.js.org/) - A module bundler
+- [SCSS](http://sass-lang.com/) - A css metalanguage
+- [Tailwind](https://tailwindcss.com/) - A css framework
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `yarn build` fails to minify
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+The following software is required to be installed on your system:
+
+- Node 8.x
+- Npm 3.x
+
+Type the following commands in the terminal to verify your node and npm versions
+
+```bash
+node -v
+npm -v
+```
+
+### Install
+
+Follow the following steps to get development environment running.
+
+- Clone _'react-tailwind-ecommerce.git'_ repository from GitHub
+
+  ```bash
+  git clone https://github.com/sebamar88/react-tailwind-ecommerce.git
+  ```
+
+  _OR USING SSH_
+
+  ```bash
+  git clone https://github.com/sebamar88/react-tailwind-ecommerce.git
+  ```
+
+- Install node modules
+
+  ```bash
+  npm install
+  ```
+
+### Starting front-end servers
+
+- Build application
+
+  ```bash
+  npm start
+  ```
+
+---

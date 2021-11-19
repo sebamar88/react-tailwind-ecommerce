@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as styles from "./AddtoCart.module.css";
+import * as styles from "./AddtoCart.module.scss";
 
 const AddtoCart = ({ stock, onAdd }) => {
   const [counter, setCounter] = useState(0);
