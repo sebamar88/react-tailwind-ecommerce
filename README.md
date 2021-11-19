@@ -1,5 +1,7 @@
 # React-Tailwind-Ecommerce CoderHouse
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/53a12330-2cf0-4511-90ad-49247851c55b/deploy-status)](https://app.netlify.com/sites/react-tailwind-ecommerce/deploys)
+
 _Social buttons_
 
 [![sebamar88 - react-tailwind-ecommerce](https://img.shields.io/static/v1?label=sebamar88&message=react-tailwind-ecommerce&color=blue&logo=github)](https://github.com/sebamar88/react-tailwind-ecommerce "Go to GitHub repo")
@@ -25,8 +27,6 @@ Released under [MIT](/LICENSE) by [@sebamar88](https://github.com/sebamar88).
 
 - The data is stored on Firestore
 - It is hosted [HERE!](react-tailwind-ecommerce.netlify.app/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8921ab13-bd37-4b13-919b-559f6a9efad2/deploy-status)](https://app.netlify.com/sites/react-tailwind-ecommerce/deploys)
 
 An E commerce platform made using React JS, Context, Firebase , Firestore & Tailwind
 
