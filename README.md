@@ -74,6 +74,7 @@ Order Details:
 - [Webpack](https://webpack.js.org/) - A module bundler
 - [SCSS](http://sass-lang.com/) - A css metalanguage
 - [Tailwind](https://tailwindcss.com/) - A css framework
+- [HeroIcons](https://heroicons.com/) - An icon library
 
 ---
 
