@@ -121,7 +121,7 @@ const Order = () => {
                   <tfoot className="bg-indigo-200">
                     <tr>
                       <td className="py-4 text-sm font-extrabold text-center text-gray-500 border-4 border-r-0 border-indigo-500 whitespace-nowrap">
-                        TOTAL
+                        Total:
                       </td>
                       <td className="py-4 text-sm font-extrabold text-center text-gray-500 border-4 border-l-0 border-r-0 border-indigo-500 whitespace-nowrap"></td>
                       <td className="py-4 text-sm font-extrabold text-center text-gray-500 border-4 border-l-0 border-r-0 border-indigo-500 whitespace-nowrap"></td>
